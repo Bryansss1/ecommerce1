@@ -1,0 +1,251 @@
+.lds-ellipsis {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    z-index:2000 ;
+  }
+  .lds-ellipsis div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: rgb(255, 251, 251);
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  .lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(24px, 0);
+    }
+  }
+
+.priceee{
+  color: rgb(115, 201, 17);
+  transition: all .3s;
+}
+.priceee:hover{
+  text-shadow: 2px 2px 6px  rgb(153, 255, 0);
+  transform: scale(.9);
+}
+.title-prod{
+text-shadow: 1px 3px 1px rgb(167, 167, 167);
+}
+/*HOME SECCION*/
+
+.home-interfaz{
+  display: grid;
+  justify-content:center;
+  margin: 0rem 1rem;
+  margin-top: 3rem;
+}
+.mb-3 {
+  height: 2rem;
+  max-width: 50rem;
+}
+.mb-3 button{
+  background-color: rgb(241, 241, 241);
+   color: rgb(0, 0, 0);
+   border-radius: 3%;
+}
+.mb-3 input{
+border: .1px solid gray;
+}
+.categories-home{ 
+  width: 100%;
+  max-width: 10rem;
+}
+.categories-home ul{
+ list-style: none;
+}
+.categories-home li{
+  margin-top: .2rem;
+}
+
+.cards-grid{
+  display: grid;
+  width: 100%;
+  gap: 1rem;
+  margin: auto;
+  margin-top: 4rem;
+}
+.card{
+  padding: 1rem ;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 15rem;
+  margin: auto;
+  border-radius: 3%;
+ 
+}
+
+.card li:nth-child(1){
+  background-color: rgba(66, 167, 255, 0.13);
+  border-radius: 3%;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.192);
+}
+.card button{
+  border-radius: 3%;
+}
+.card img{
+ 
+  width: 100px;
+  max-height: 120px;
+}
+/*HOME SECCION CLOSE*/
+ul{
+  list-style: none;
+}
+/*DETAIL PRODUCT*/
+.image-detail{
+  max-height: 15rem;
+}
+.detail-title{
+  width: 97%;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.card-detail{
+  background-color: rgba(208, 242, 255, 0.13);
+  width: 90%;
+  display: flex;
+  align-items: flex-start;
+  margin: auto;
+  gap: .5rem;
+}
+.zzz{
+  
+  background-color: rgba(128, 128, 128, 0.329);
+}
+.card-detail ul{
+list-style: none;
+overflow:auto;
+max-height: 15rem;
+}
+.card-detail img{
+  margin: auto;
+  width: 100%;
+  min-width: 7rem;
+  max-width: 15rem;
+}
+
+
+.imagenes-detailpro{
+  margin: auto;
+  width: 100%;
+  border-bottom: 1px solid rgba(20, 0, 0, 0.322);
+  border-top: 1px solid rgba(20, 0, 0, 0.322);
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+}
+.imagenes-detailpro img{
+  background-color: rgba(3, 3, 0, 0.103);
+  max-height: 7rem;
+  padding: .2rem;
+  border-radius: 5%;
+  transition: all .2s;
+}
+.imagenes-detailpro img:hover{
+background-color: rgba(42, 9, 231, 0.267);
+transform: scale(1.1);
+padding: .5rem;
+}
+.suggered-title{
+display: inline-block;
+border-bottom:2px solid rgba(21, 5, 248, 0.322) ;
+text-shadow: 1px 3px 1px rgb(167, 167, 167);
+color: rgba(0, 0, 0, 0.952);
+ position: relative;
+ top: 2rem;
+}
+.detail-button-buy{
+  width: 90%;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+.buy-details{
+  background: none;
+  cursor: pointer;
+  margin-top: 1rem;
+  border-radius: 5%;
+  padding: 1rem 1.5rem;
+ border: 2px solid;
+  margin-left: 1rem;
+  color: gray;
+  transition: all .2s;
+}
+.buy-details:hover{
+  transform: scale(1.1);
+  color: black;
+  border: 2px solid greenyellow;
+  box-shadow: 2px 2px 6px 2px greenyellow;
+}
+@media screen and (min-width:600px){
+  .cards-grid{
+    grid-template-columns: 2fr 2fr ;
+  }
+  .home-interfaz{
+    gap: 5rem;
+    grid-template-columns: 1fr 5fr;
+  }
+}
+
+@media screen and (min-width:750px){
+  .cards-grid{
+    grid-template-columns: 2fr 2fr 2fr;
+  }
+}
+
+
+
+
+
+  
