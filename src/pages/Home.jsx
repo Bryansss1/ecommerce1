@@ -28,7 +28,7 @@ const Home = () => {
     },[])
 
    
-console.log(categorys)
+
 
     return (
         <div>
@@ -45,7 +45,7 @@ console.log(categorys)
             </ul>
             </div>
 
-            <InputGroup className="mb-3">
+            <InputGroup className="mb-3 homepin">
         <Form.Control
           placeholder="Recipient's username"
           aria-label="Recipient's username"
@@ -62,8 +62,8 @@ console.log(categorys)
   <section className='cards-grid'>
             {products.map(prod=>{  
     return(
-      <ul key={prod.id} className='card'>
-        <li>{prod.title}</li>
+      <ul style={{height:"280px"}} key={prod.id} className='card'>
+        <li style={{overflow:"auto"}}>{prod.title}</li>
         <li> {prod.category.name}</li>
         <img src={prod.productImgs[0]}alt=""/>
         <li className='priceee'>{prod.price}$</li>

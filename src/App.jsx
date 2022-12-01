@@ -9,6 +9,8 @@ import Navbarr from './componentes/Navbar'
 import Loading from './componentes/Loading'
 import { useSelector } from 'react-redux'
 import "./styles/App.css"
+import ProtectedRoutes from './componentes/RuteProtect'
+
 
 function App() {
  
@@ -27,8 +29,7 @@ const isLoadingg=useSelector(state=>state.loading)
       <Route  path='/' element={<Home/>}/>
       <Route  path='/product/:id' element={<Newsdetail/>}/>
       <Route  path='/login' element={<Login/>}/>
-      <Route  path='/purchases' element={<Favorites/>}/>
-
+      <Route element={<ProtectedRoutes/>}><Route  path='/purchases' element={<Favorites/>}/></Route>
      </Routes>
     </div>
     </HashRouter>
