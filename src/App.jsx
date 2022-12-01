@@ -27,9 +27,12 @@ const isLoadingg=useSelector(state=>state.loading)
      <Routes>
 
       <Route  path='/' element={<Home/>}/>
-      <Route  path='/product/:id' element={<Newsdetail/>}/>
       <Route  path='/login' element={<Login/>}/>
-      <Route element={<ProtectedRoutes/>}><Route  path='/purchases' element={<Favorites/>}/></Route>
+      
+      <Route element={<ProtectedRoutes/>}>
+      <Route  path='/product/:id' element={<Newsdetail/>}/>
+      <Route  path='/purchases' element={<Favorites/>}/>
+      </Route>
      </Routes>
     </div>
     </HashRouter>
