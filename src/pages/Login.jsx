@@ -34,7 +34,7 @@ const submi =(data)=>{
 
     return (
         <div>
-            <h2 style={{textAlign:"center"}}>login</h2>
+            <h2 style={{textAlign:"center",marginTop:"2rem"}}>login</h2>
 
             <div className='test-user'>
                 <h5>test user</h5>

@@ -15,6 +15,7 @@ const cart=useSelector(state=>state.cart)
 const [totall,setTotal]=useState(null)
 
 useEffect(()=>{
+
 let total=0
 cart.forEach(pro => {
     total+=pro.price*pro.productsInCart.quantity
@@ -23,7 +24,6 @@ cart.forEach(pro => {
 setTotal(total)
 },[cart])
 
-console.log(cart)
 
     return (
         <>
@@ -54,7 +54,7 @@ console.log(cart)
                 </ul>
                 )
             })}
-                    <p>{totall}$</p>
+                    <p style={{color:"green"}}>{totall}$</p>
                     <Button style={{width:"100%",borderRadius:"8px"}} onClick={()=>dispath(CheckproductCartThunk())}>Checkout<i className='bx bx-check'></i></Button>
         </Offcanvas.Body>
       </Offcanvas> 

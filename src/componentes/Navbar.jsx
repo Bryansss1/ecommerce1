@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -10,9 +10,11 @@ import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import SideCart from './SideCart';
 import Swal from 'sweetalert2'
+import { useDispatch } from 'react-redux';
+import { getCartThunk } from '../store/slices/productCart.slice';
 
 const Navbarr = () => {
-
+const dispatch=useDispatch()
 const navigate=useNavigate()
 
 const [show, setShow] = useState(false);
@@ -29,6 +31,9 @@ const logoutt=()=>{
 })
 }
 
+useEffect(()=>{
+dispatch(getCartThunk())
+},[show])
 
 const logeado=localStorage.getItem("token")
 

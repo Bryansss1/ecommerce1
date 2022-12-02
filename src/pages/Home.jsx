@@ -48,7 +48,7 @@ const Home = () => {
             </div>
 
 <div>
-<p style={{cursor:"pointer"}} onClick={()=>dispatchh(getProducstThunk())}>All</p>
+            <small style={{cursor:"pointer"}} onClick={()=>dispatchh(getProducstThunk())}>All</small>
             <p onClick={()=>setbarCateg(!barCateg)}>Categories <span>{barCateg?"▼":"▲"}</span></p>
             <ul style={{display:`${barCateg?"block":"none"}`,borderRight:`${barCateg?"1px solid gray":"none"}`}}>
             {categorys?.map(cate=><li onClick={()=>{

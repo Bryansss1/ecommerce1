@@ -16,7 +16,7 @@ dispatch(getPucharseThunk())
 console.log(pucharse)
     return (
         <div>
-            <h2 style={{textAlign:"center"}}>purchases</h2>
+            <h2 style={{textAlign:"center",marginTop:"2rem"}}>purchases</h2>
             {pucharse.map(pucharse=>{
                 return(
                     <div className='pucharse-card' key={pucharse.cartId}>
