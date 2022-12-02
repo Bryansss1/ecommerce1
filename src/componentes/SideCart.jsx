@@ -12,10 +12,16 @@ const SideCart = ({show,handleClose}) => {
 const navigate=useNavigate()    
 const dispath=useDispatch()
 const cart=useSelector(state=>state.cart)
+const [totall,setTotal]=useState(null)
 
 useEffect(()=>{
-dispath(getCartThunk())
-},[])
+let total=0
+cart.forEach(pro => {
+    total+=pro.price*pro.productsInCart.quantity
+});
+
+setTotal(total)
+},[cart])
 
 console.log(cart)
 
@@ -28,8 +34,8 @@ console.log(cart)
         <Offcanvas.Body>
             
             {cart.map(pro=>{
-                return(
 
+                return(
                 <ul key={pro.title} className='product-cart'>
                         <li>
                             <div style={{display:"flex"}}><h4>{pro.title}</h4>
@@ -38,7 +44,7 @@ console.log(cart)
 
                                 }} style={{borderRadius:"8px"}}>Info<i className='bx bx-question-mark'></i>
                                 </Button>
-
+                                    
                                 </div>
                             <span>quantity:{pro.productsInCart.quantity}</span>
                             <p>Price/Uni:{pro.price}$</p>
@@ -48,6 +54,7 @@ console.log(cart)
                 </ul>
                 )
             })}
+                    <p>{totall}$</p>
                     <Button style={{width:"100%",borderRadius:"8px"}} onClick={()=>dispath(CheckproductCartThunk())}>Checkout<i className='bx bx-check'></i></Button>
         </Offcanvas.Body>
       </Offcanvas> 

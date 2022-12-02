@@ -20,7 +20,8 @@ const Newsdetail = () => {
 
     useEffect(()=>{
         dispatch(getProducstThunk())
-    },[])
+        window.scrollTo(0,0)
+    },[id])
 
     const productDetail=products.find(pro=>pro.id==id)
     const sugeridos=products.filter(pro=>pro.category.id==productDetail.category.id)

@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import isLoadingSlice, { setLoading } from '../store/slices/isLoading.slice';
-
+import { Link } from 'react-router-dom';
 const Login = () => {
 
     const navigatee=useNavigate()
@@ -60,6 +60,8 @@ const submi =(data)=>{
         Submit
       </Button>
     </Form>
+
+    <Link className='sign' to="/register">do you havent account? Sign up</Link>
         </div>
     );
 };

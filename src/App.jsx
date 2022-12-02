@@ -10,6 +10,8 @@ import Loading from './componentes/Loading'
 import { useSelector } from 'react-redux'
 import "./styles/App.css"
 import ProtectedRoutes from './componentes/RuteProtect'
+import Loginroute from './componentes/RouteLogin'
+import Singout from './pages/Singout'
 
 
 function App() {
@@ -27,12 +29,17 @@ const isLoadingg=useSelector(state=>state.loading)
      <Routes>
 
       <Route  path='/' element={<Home/>}/>
+      <Route path='/register' element={<Singout/>}></Route>
+
+      <Route element={<Loginroute/>}>
       <Route  path='/login' element={<Login/>}/>
-      
+      </Route>
+
       <Route element={<ProtectedRoutes/>}>
       <Route  path='/product/:id' element={<Newsdetail/>}/>
       <Route  path='/purchases' element={<Favorites/>}/>
       </Route>
+
      </Routes>
     </div>
     </HashRouter>

@@ -8,11 +8,16 @@ export const productsSlice = createSlice({
     reducers: {
         setProduct:(state,action)=>{
             return action.payload
+        },
+        filterPrice:(state,action)=>{
+            //lo destructuru en un objeto lo coloco en un objeto
+            const {from,to}=action.payload
+                return state.filter(pro=>(pro.price> Number(from)&& pro.price< Number(to)))
         }
     }
 })
 
-export const { setProduct } = productsSlice.actions;
+export const { setProduct,filterPrice } = productsSlice.actions;
 
 export const getProducstThunk=()=>dispatch=>{
     dispatch(setLoading(true))
