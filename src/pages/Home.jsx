@@ -12,6 +12,7 @@ import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Autocomplete from '../componentes/Autocomplete';
 
 const Home = () => {
     const navigatee=useNavigate()
@@ -21,7 +22,7 @@ const Home = () => {
     const [inputsearch,setSearch]=useState("")
     const [barCateg,setbarCateg]=useState(false)
     const[filterbag,setbagFilter]=useState(false)
-
+    const [focusss,setFocus]=useState(false)
     const [from,setfrom]=useState("")
     const [to,setTo]=useState("")
 
@@ -31,7 +32,7 @@ const Home = () => {
         .then(res=>setCategorys(res.data.data.categories))
     },[])
 
-
+console.log(products)
     return (
         <div>
             <section className='home-interfaz'>
@@ -58,21 +59,25 @@ const Home = () => {
             </ul>
 </div>
               </article>
-
             <InputGroup className="mb-3 homepin">
-        <Form.Control
-          placeholder="Recipient's username"
+          <Form.Control
+          placeholder="Products"
           aria-label="Recipient's username"
           aria-describedby="basic-addon2"
           onChange={(e)=>setSearch(e.target.value)}
           value={inputsearch}
-        />
-        <Button onClick={()=>dispatchh(filtersearch(inputsearch))} variant="outline-secondary" id="button-addon2">
-        <i className='bx bx-search-alt'></i>search
-        </Button>
-      </InputGroup>
-    </section>
-  
+          onFocus={()=>setFocus(true)}
+          onAbort={()=>setFocus(false)}
+          />
+         <Button onClick={()=>dispatchh(filtersearch(inputsearch))} variant="outline-secondary" id="button-addon2">
+          <i className='bx bx-search-alt'></i>search
+          </Button>
+        </InputGroup>
+     </section>
+
+     <Autocomplete focus={focusss} search={inputsearch}/>  
+
+
   <section className='cards-grid'>
             {products.map(prod=>{  
     return(
